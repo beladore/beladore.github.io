@@ -1,5 +1,6 @@
 body {
-    background-color: #EFDDCF;
+    background: linear-gradient(to right, #d6a194, #ffe8b7);
+    overflow-x: hidden;
 }
 
 .box {
@@ -23,8 +24,8 @@ body {
 }
 
 .p {
-    margin-top: -20px;
-    margin-bottom: 60px;
+    margin-top: -15px;
+    margin-bottom: 80px;
     font-family: "Anonymous Pro";
     font-size: 32px;
     font-style: italic;
@@ -40,4 +41,45 @@ body {
       width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
     }
 }
-  
+
+#cloud1 {
+    position: absolute;
+    left: -30%; /* Off-screen to the left */
+    top: 80%;
+    transform: translateY(-50%);
+    animation: glideIn1 4.5s forwards;
+}
+
+@keyframes glideIn1 {
+    to {
+        left: -4%; /* Slides in from the left */
+    }
+}
+
+#cloud2 {
+    position: absolute;
+    left: -10%; /* Off-screen to the left */
+    top: 85%;
+    transform: translateY(-50%);
+    animation: glideIn2 3s forwards;
+}
+
+@keyframes glideIn2 {
+    to {
+        left: 6%; /* Slides in from the left */
+    }
+}
+
+#cloud3 {
+    position: absolute;
+    top: 15%; /* Off-screen to the left */
+    right: -20%;
+    transform: translateY(-50%);
+    animation: glideIn3 4s forwards;
+}
+
+@keyframes glideIn3 {
+    to {
+        right: 2%; /* Slides in from the left */
+    }
+}
