@@ -1,33 +1,33 @@
 body {
-    background: linear-gradient(to right, #d6a194, #ffe8b7);
+    height:100%;
+    background: linear-gradient(180deg, #D6A0F4, #FFA5C7, #FF8CB6);
     overflow-x: hidden;
 }
 
 .box {
-    background-color:#FFFBFB;
+    background-color:#fffbfb7c;
     padding: 20px;
     font-size: 35px;
     text-align: center;
     width: 50%;
-    margin-left: 25%;
+    margin-left: 22%;
     margin-top: 250px;
     border-radius: 60px;
-    box-shadow: 0px 4px 4px 0px rgba(106, 23, 48, 0.25);
 }
 
 .h2 {
     font-family: "Crimson Text";
-    font-size: 48px;
+    font-size: 38px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
 
 .p {
-    margin-top: -15px;
+    margin-top: -10px;
     margin-bottom: 80px;
     font-family: "Anonymous Pro";
-    font-size: 32px;
+    font-size: 28px;
     font-style: italic;
     font-weight: 400;
     line-height: normal;
@@ -52,21 +52,23 @@ body {
 
 @keyframes glideIn1 {
     to {
-        left: -4%; /* Slides in from the left */
+        left: -20px; /* Slides in from the left */
     }
 }
 
 #cloud2 {
+    z-index: 100;
     position: absolute;
     left: -10%; /* Off-screen to the left */
     top: 85%;
     transform: translateY(-50%);
     animation: glideIn2 3s forwards;
+    margin-bottom: 20px;
 }
 
 @keyframes glideIn2 {
     to {
-        left: 6%; /* Slides in from the left */
+        left: 70px; /* Slides in from the left */
     }
 }
 
@@ -80,6 +82,92 @@ body {
 
 @keyframes glideIn3 {
     to {
-        right: 2%; /* Slides in from the left */
+        right: 10px; /* Slides in from the left */
     }
 }
+
+#grid {
+    position: relative;
+    left: -10px;
+    width: 102%;
+    margin-top: 250px;
+    height: 50vh;
+    transition: 500ms;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 3px;
+    background: rgb(255, 250, 251);
+  }
+.left > img {
+    object-fit: cover;
+    width: 100%;
+    max-height: 100%;
+}
+
+.centerleft > img {
+    object-fit: cover;
+    width: 100%;
+    max-height: 100%;
+}
+.center > img {
+    object-fit: cover;
+    width: 100%;
+    max-height: 100%;
+}
+.centerright > img {
+    object-fit: cover;
+    width: 100%;
+    max-height: 100%;
+}
+.right > img {
+    object-fit: cover;
+    width: 100%;
+    max-height: 100%;
+}
+:where(.left, .centerleft, .centerright, .center, .right) {
+    background: rgb(255, 255, 255);
+    transition: 300ms;
+}
+  
+:where(.left, .centerleft, .centerright, .center, .right):hover {
+    background: rgb(255, 244, 246);
+}
+  
+#grid:has(.left:hover) {
+    grid-template-columns: 0.8fr 0.24fr 0.24fr 0.24fr 0.24fr;
+}
+#grid:has(.centerleft:hover) {
+    grid-template-columns: 0.24fr 0.8fr 0.24fr 0.24fr 0.24fr;
+}
+#grid:has(.center:hover) {
+    grid-template-columns: 0.24fr 0.24fr 0.8fr 0.24fr 0.24fr;
+}
+
+#grid:has(.centerright:hover) {
+    grid-template-columns: 0.24fr 0.24fr 0.24fr 0.8fr 0.24fr;
+}
+
+#grid:has(.right:hover) {
+    grid-template-columns: 0.24fr 0.24fr 0.24fr 0.24fr 0.8fr;
+}
+
+footer {
+    margin-top: 150px;
+    width: 103%;
+    position: relative; 
+    bottom: -10px; 
+    left: -10px; 
+    z-index: 10;
+    color: #200404;
+    text-align: center;
+    font-family: "Playfair Display";
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 60px;
+    background-color: rgb(255, 248, 245);
+    color: rgb(44, 10, 10);
+  }
