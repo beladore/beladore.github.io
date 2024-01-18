@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<div class="header">
+<div class="header" id="myHeader">
     <a class="active">bel's hub</a>
     <div class="headerbuttons">
         <a class="art" href="#grid">art</a>
@@ -22,26 +22,29 @@
     <p class="p">Welcome to my cozy little space,<br>I’m a compsci student that loves anything artsy</p>
 </div>
 
-<a><img src="cloud2.svg" id="cloud1" style="width:400px;height:400px;"></a>
-<a><img src="cloud.svg" id="cloud2" style="width:300px;height:300px;"></a>
-<a><img src="cloud.svg" id="cloud3" style="width:300px;height:300px;"></a>
-
-<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-
-<div id="grid">
-    <div class="left"> <img src="drawing1.jpg" style="height: 50vh;"> </div>
-    <div class="centerleft"> <img src="drawing2.jpg" style="height: 50vh;"></div>
-    <div class="center"><img src="drawing3.jpg" style="height: 50vh;"></div>
-    <div class="centerright"><img src="drawing4.jpg" style="height: 50vh;"></div>
-    <div class="right"><img src="drawing5.jpg" style="height: 50vh;"></div>
-</div>
-<footer id="contact">
-    <p>Get in contact~<br>
-    <div class="buttons">
-        <a href="https://www.youtube.com/watch?v=0tOXxuLcaog&t=1494s&ab_channel=10HoursMovies"><img src="discord.svg" id="discord" style="width:65px;height:65px;"></a>
-        <a href="https://www.instagram.com/anabelkalamees"><img src="instagram.svg" id="instagram" style="width:65px;height:65px;"></a>
+<div class="content">
+    <a><img src="cloud2.svg" id="cloud1" style="width:400px;height:400px;"></a>
+    <a><img src="cloud.svg" id="cloud2" style="width:300px;height:300px;"></a>
+    <a><img src="cloud.svg" id="cloud3" style="width:300px;height:300px;"></a>
+    
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    
+    <div id="grid">
+        <div class="left"> <img src="drawing1.jpg" style="height: 50vh;"> </div>
+        <div class="centerleft"> <img src="drawing2.jpg" style="height: 50vh;"></div>
+        <div class="center"><img src="drawing3.jpg" style="height: 50vh;"></div>
+        <div class="centerright"><img src="drawing4.jpg" style="height: 50vh;"></div>
+        <div class="right"><img src="drawing5.jpg" style="height: 50vh;"></div>
     </div>
-</footer>
+    <footer id="contact">
+        <p>Get in contact~<br>
+        <div class="buttons">
+            <a href="https://www.youtube.com/watch?v=0tOXxuLcaog&t=1494s&ab_channel=10HoursMovies"><img src="discord.svg" id="discord" style="width:65px;height:65px;"></a>
+            <a href="https://www.instagram.com/anabelkalamees"><img src="instagram.svg" id="instagram" style="width:65px;height:65px;"></a>
+        </div>
+    </footer>
+</div>
+
 
 <script>
 // Get the button
@@ -72,6 +75,24 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+
+// When the user scrolls the page, execute myFunction
+window.onscroll = function() {myFunction()};
+
+// Get the header
+var header = document.getElementById("myHeader");
+
+// Get the offset position of the navbar
+var sticky = header.offsetTop;
+
+// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+    } else {
+        header.classList.remove("sticky");
+    }
+}
 </script>
 </body>
 </html>
