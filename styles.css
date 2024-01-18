@@ -4,6 +4,43 @@ body {
     overflow-x: hidden;
 }
 
+.header {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 100%;
+    padding: 30px;
+    background: #ffffffc2;
+    font-size: 30px;
+}
+.active {
+    color: #C951A0;
+    top: 30px;
+    font-family: "IBM Plex Mono";
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration: none;
+}
+
+.headerbuttons {
+    position: absolute;
+    top: 30px;
+    right: 10%;
+}
+.art, .contact, .games {
+    text-decoration: none;
+    color: #000;
+    text-align: center;
+    font-family: "IBM Plex Mono";
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 300;
+    line-height: normal;
+    margin-inline: 10px;
+    letter-spacing: 0.7px;
+}
 .box {
     background-color:#fffbfb7c;
     padding: 20px;
@@ -22,6 +59,8 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    letter-spacing: 1px;
+
 }
 
 .p {
@@ -32,6 +71,7 @@ body {
     font-style: italic;
     font-weight: 400;
     line-height: normal;
+    letter-spacing: 1.5px;
 }
 #discord {
     margin-right: 15px;
@@ -75,7 +115,8 @@ body {
 
 #cloud3 {
     position: absolute;
-    top: 15%; /* Off-screen to the left */
+    z-index: 10;
+    top: 21%; /* Off-screen to the left */
     right: -20%;
     transform: translateY(-50%);
     animation: glideIn3 4s forwards;
@@ -83,7 +124,7 @@ body {
 
 @keyframes glideIn3 {
     to {
-        right: 10px; /* Slides in from the left */
+        right: 7px; /* Slides in from the left */
     }
 }
 
@@ -96,7 +137,6 @@ body {
     transition: 500ms;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    gap: 3px;
     background: rgb(255, 250, 251);
   }
 .left > img {
@@ -125,31 +165,23 @@ body {
     width: 100%;
     max-height: 100%;
 }
-:where(.left, .centerleft, .centerright, .center, .right) {
-    background: rgb(255, 255, 255);
-    transition: 300ms;
-}
-  
-:where(.left, .centerleft, .centerright, .center, .right):hover {
-    background: rgb(255, 244, 246);
-}
   
 #grid:has(.left:hover) {
-    grid-template-columns: 0.8fr 0.24fr 0.24fr 0.24fr 0.24fr;
+    grid-template-columns: 0.5fr 0.3fr 0.3fr 0.3fr 0.3fr;
 }
 #grid:has(.centerleft:hover) {
-    grid-template-columns: 0.24fr 0.8fr 0.24fr 0.24fr 0.24fr;
+    grid-template-columns: 0.3fr 0.5fr 0.3fr 0.3fr 0.3fr;
 }
 #grid:has(.center:hover) {
-    grid-template-columns: 0.24fr 0.24fr 0.8fr 0.24fr 0.24fr;
+    grid-template-columns: 0.3fr 0.3fr 0.5fr 0.3fr 0.3fr;
 }
 
 #grid:has(.centerright:hover) {
-    grid-template-columns: 0.24fr 0.24fr 0.24fr 0.8fr 0.24fr;
+    grid-template-columns: 0.3fr 0.3fr 0.3fr 0.5fr 0.3fr;
 }
 
 #grid:has(.right:hover) {
-    grid-template-columns: 0.24fr 0.24fr 0.24fr 0.24fr 0.8fr;
+    grid-template-columns: 0.3fr 0.3fr 0.3fr 0.3fr 0.5fr;
 }
 
 footer {
@@ -162,7 +194,7 @@ footer {
     color: #200404;
     text-align: center;
     font-family: "Playfair Display";
-    font-size: 36px;
+    font-size: 30px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -171,4 +203,29 @@ footer {
     padding-bottom: 60px;
     background-color: rgb(255, 248, 245);
     color: rgb(44, 10, 10);
+    letter-spacing: 1.5px;
   }
+
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 23px; /* Place the button at the bottom of the page */
+    right: 33px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: rgba(255, 92, 133, 0.5); /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 15px; /* Rounded corners */
+    font-size: 16px; /* Increase font size */
+    font-family: "Anonymous Pro";
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2px;
+}
+  
+#myBtn:hover {
+    background-color: #ffaacee1; /* Add a dark-grey background on hover */
+}

@@ -8,30 +8,70 @@
 </head>
 <body>
 
-    
+<div class="header">
+    <a class="active">bel's hub</a>
+    <div class="headerbuttons">
+        <a class="art" href="#grid">art</a>
+        <a class="contact" href="#contact">contact</a>
+        <a class="games" href="#games">games</a>
+    </div>
+</div>
+
 <div class="box">
     <h2 class="h2">Hi, I’m  bel! </h2>
     <p class="p">Welcome to my cozy little space,<br>I’m a compsci student that loves anything artsy</p>
 </div>
+
 <a><img src="cloud2.svg" id="cloud1" style="width:400px;height:400px;"></a>
-
 <a><img src="cloud.svg" id="cloud2" style="width:300px;height:300px;"></a>
-
 <a><img src="cloud.svg" id="cloud3" style="width:300px;height:300px;"></a>
 
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
 <div id="grid">
-    <div class="left"> <img src="gim1.jpg" style="height: 50vh;"> </div>
-    <div class="centerleft"> <img src="ilfi1.jpg" style="height: 50vh;"></div>
-    <div class="center"><img src="gim2.jpg" style="height: 50vh;"></div>
-    <div class="centerright"><img src="ilfi2.jpg" style="height: 50vh;"></div>
-    <div class="right"><img src="gim3.jpg" style="height: 50vh;"></div>
+    <div class="left"> <img src="drawing1.jpg" style="height: 50vh;"> </div>
+    <div class="centerleft"> <img src="drawing2.jpg" style="height: 50vh;"></div>
+    <div class="center"><img src="drawing3.jpg" style="height: 50vh;"></div>
+    <div class="centerright"><img src="drawing4.jpg" style="height: 50vh;"></div>
+    <div class="right"><img src="drawing5.jpg" style="height: 50vh;"></div>
 </div>
-<footer>
+<footer id="contact">
     <p>Get in contact~<br>
     <div class="buttons">
         <a href="https://www.youtube.com/watch?v=0tOXxuLcaog&t=1494s&ab_channel=10HoursMovies"><img src="discord.svg" id="discord" style="width:65px;height:65px;"></a>
         <a href="https://www.instagram.com/anabelkalamees"><img src="instagram.svg" id="instagram" style="width:65px;height:65px;"></a>
     </div>
 </footer>
+
+<script>
+// Get the button
+let mybutton = document.getElementById("myBtn");
+    
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+    
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+    } else {
+        mybutton.style.display = "none";
+    }
+}
+    
+    // When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+</script>
 </body>
 </html>
