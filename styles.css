@@ -45,8 +45,13 @@ body {
     top: 25px;
     right: 8vh;
 }
-.art, .contact, .games {
+.games {
+    text-decoration: line-through;
+}
+.art-button, .contact {
     text-decoration: none;
+}
+.art-button, .contact, .games {
     color: #000;
     text-align: center;
     font-family: "IBM Plex Mono";
@@ -56,8 +61,9 @@ body {
     line-height: normal;
     margin-inline: 10px;
     letter-spacing: 0.7px;
+    transition: 0.33s;
 }
-.art:hover, .contact:hover, .games:hover {
+.art-button:hover, .contact:hover, .games:hover {
     color: #ff8cb6e5;
 }
 .box {
@@ -71,12 +77,16 @@ body {
     border-radius: 60px;
 }
 
-.p-art {
+.art {
     width: auto;
     margin-top: 30vh;
     text-align: center;
     background-color: #ffffffdc;
-    padding: 20px;
+    padding: 15px;
+    padding-bottom: 50px;
+    margin-bottom: 20vh;
+}
+.p-art {
     font-size: 22px;
 }
 
@@ -96,8 +106,13 @@ body {
     font-size: 28px;
     font-style: italic;
 }
-#discord {
-    margin-right: 15px;
+
+.discord, .instagram, .github {
+    transition: 0.33s;
+    margin-inline: 10px;
+}
+.discord:hover, .instagram:hover, .github:hover {
+    transform: scale(1.2);
 }
 
 @media screen and (max-width: 800px) {
@@ -153,16 +168,15 @@ body {
 
 #grid {
     position: relative;
-    left: 0;
-    width: 100%;
-    margin-top: -30px;
-    margin-bottom: 20vh;
-    height: 50vh;
-    transition: 500ms;
+    left: 5%;
+    width: 90%;
+    height: 45vh;
+    transition: 0.56s;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     background: rgb(255, 250, 251);
   }
+
 .left > img {
     object-fit: cover;
     width: 100%;
@@ -208,6 +222,18 @@ body {
     grid-template-columns: 0.3fr 0.3fr 0.3fr 0.3fr 0.5fr;
 }
 
+.songs {
+    position: relative;
+    text-align: center;
+    background-color: #ffffff85;
+    width: 100%;
+    padding: 10px;
+    padding-bottom: 30px;
+    margin-bottom: 10vh;
+}
+.song1, .song2, .song3 {
+    margin-inline: 0.9vh;
+}
 footer {
     position: relative;
     width: 100%;
@@ -216,7 +242,7 @@ footer {
     z-index: 10;
     color: #200404;
     font-family: "Playfair Display";
-    font-size: 30px;
+    font-size: 27px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
