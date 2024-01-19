@@ -4,6 +4,7 @@ html {
 
 body {
     height: 100%;
+    min-height: 100vh;
     margin: 0;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -11,6 +12,11 @@ body {
     overflow-x: hidden;
     overflow-y: auto;
     scrollbar-gutter: stable;
+    font-family: "Anonymous Pro";
+    font-size: 28px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.5px;
 }
 
 .header {
@@ -37,7 +43,7 @@ body {
 .headerbuttons {
     position: absolute;
     top: 25px;
-    right: 7%;
+    right: 8vh;
 }
 .art, .contact, .games {
     text-decoration: none;
@@ -51,17 +57,28 @@ body {
     margin-inline: 10px;
     letter-spacing: 0.7px;
 }
+.art:hover, .contact:hover, .games:hover {
+    color: #ff8cb6e5;
+}
 .box {
     background-color:#fffbfb7c;
     padding: 20px;
     font-size: 35px;
     text-align: center;
+    margin-left: 24%;
     width: 50%;
-    margin-left: 25%;
-    margin-top: 250px;
+    margin-top: 30vh;
     border-radius: 60px;
 }
 
+.p-art {
+    width: auto;
+    margin-top: 30vh;
+    text-align: center;
+    background-color: #ffffffdc;
+    padding: 20px;
+    font-size: 22px;
+}
 
 .h2 {
     font-family: "Crimson Text";
@@ -76,12 +93,8 @@ body {
 .p {
     margin-top: -10px;
     margin-bottom: 80px;
-    font-family: "Anonymous Pro";
     font-size: 28px;
     font-style: italic;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 1.5px;
 }
 #discord {
     margin-right: 15px;
@@ -95,23 +108,23 @@ body {
 
 #cloud1 {
     position: absolute;
-    left: -30%; /* Off-screen to the left */
-    top: 80%;
+    left: -50%; /* Off-screen to the left */
+    top: 60vh;
     transform: translateY(-50%);
     animation: glideIn1 4.5s forwards;
 }
 
 @keyframes glideIn1 {
     to {
-        left: -20px; /* Slides in from the left */
+        left: -17%; /* Slides in from the left */
     }
 }
 
 #cloud2 {
     z-index: 100;
     position: absolute;
-    left: -10%; /* Off-screen to the left */
-    top: 85%;
+    left: -300px; /* Off-screen to the left */
+    top: 67vh;
     transform: translateY(-50%);
     animation: glideIn2 3s forwards;
     margin-bottom: 20px;
@@ -119,14 +132,14 @@ body {
 
 @keyframes glideIn2 {
     to {
-        left: 70px; /* Slides in from the left */
+        left: -5%; /* Slides in from the left */
     }
 }
 
 #cloud3 {
     position: absolute;
     z-index: 10;
-    top: 21%; /* Off-screen to the left */
+    top: 21vh; /* Off-screen to the left */
     right: -20%;
     transform: translateY(-50%);
     animation: glideIn3 4s forwards;
@@ -134,16 +147,16 @@ body {
 
 @keyframes glideIn3 {
     to {
-        right: 7px; /* Slides in from the left */
+        right: -10%; /* Slides in from the left */
     }
 }
 
 #grid {
-    position: absolute;
+    position: relative;
     left: 0;
     width: 100%;
-    margin-top: 250px;
-    margin-bottom: 250px;
+    margin-top: -30px;
+    margin-bottom: 20vh;
     height: 50vh;
     transition: 500ms;
     display: grid;
@@ -196,8 +209,7 @@ body {
 }
 
 footer {
-    position: absolute; 
-    margin-top: 500px;
+    position: relative;
     width: 100%;
     left: 0;
     top: 100%;
@@ -224,8 +236,8 @@ footer {
     z-index: 99; /* Make sure it does not overlap */
     border: none; /* Remove borders */
     outline: none; /* Remove outline */
-    background-color: rgba(255, 92, 133, 0.5); /* Set a background color */
-    color: white; /* Text color */
+    background-color: rgba(255, 224, 232, 0.5); /* Set a background color */
+    color: rgb(255, 255, 255); /* Text color */
     cursor: pointer; /* Add a mouse pointer on hover */
     padding: 15px; /* Some padding */
     border-radius: 15px; /* Rounded corners */
@@ -237,11 +249,10 @@ footer {
 }
   
 #myBtn:hover {
-    background-color: #ffaacee1; /* Add a dark-grey background on hover */
+    background-color: #ffb2c5e1; /* Add a dark-grey background on hover */
 }
-.content {
-    padding: 16px;
-}
+
+
 /* The sticky class is added to the header with JS when it reaches its scroll position */
 .sticky {
     position: fixed;
@@ -250,6 +261,6 @@ footer {
   }
   
   /* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
-  .sticky + .content {
+.sticky + .content {
     padding-top: 102px;
-  }
+}
